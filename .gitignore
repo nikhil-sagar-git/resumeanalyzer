@@ -1,0 +1,4 @@
+career_coach_chroma_db/
+.env
+__pycache__/
+*.pyc
