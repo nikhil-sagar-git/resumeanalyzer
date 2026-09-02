@@ -19,7 +19,7 @@ load_dotenv()
 DB_DIR = "career_coach_chroma_db"
 
 
-def get_llm(model: str = "llama-3.3-70b-versatile", temperature: float = 0.2):
+def get_llm(model: str = "openai/gpt-oss-120b", temperature: float = 0.2):
     api_key = os.getenv("GROQ_API_KEY")
     if not api_key:
         raise ValueError("GROQ_API_KEY not found. Create a .env file and add your Groq API key.")
