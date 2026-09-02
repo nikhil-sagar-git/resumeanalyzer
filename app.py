@@ -92,7 +92,7 @@ if st.session_state.vectorstore:
     st.markdown("### ✅ Ask Career Questions")
 
     quick_questions = [
-        "How well does this resume match the job description?",
+        "How well does this resume match job description?",
         "What are the missing skills for this role?",
         "How can I improve this resume?",
         "Suggest 3 projects to become suitable for this role.",
