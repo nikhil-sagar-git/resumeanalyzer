@@ -61,9 +61,24 @@ def split_documents(docs: List[Document], chunk_size: int = 800, chunk_overlap: 
 # -----------------------------
 # Stage 3 + 4: Embeddings + Vector DB
 # -----------------------------
+# def build_vectorstore(chunks: List[Document], persist_directory: str = DB_DIR):
+#     if Path(persist_directory).exists():
+#         shutil.rmtree(persist_directory)
+
+#     vectorstore = Chroma.from_documents(
+#         documents=chunks,
+#         embedding=get_embeddings(),
+#         persist_directory=persist_directory,
+#         collection_name="career_coach_rag",
+#     )
+#     return vectorstore
+
+
+
+
 def build_vectorstore(chunks: List[Document], persist_directory: str = DB_DIR):
-    if Path(persist_directory).exists():
-        shutil.rmtree(persist_directory)
+    persist_path = Path(persist_directory)
+    persist_path.mkdir(parents=True, exist_ok=True)
 
     vectorstore = Chroma.from_documents(
         documents=chunks,
@@ -71,6 +86,7 @@ def build_vectorstore(chunks: List[Document], persist_directory: str = DB_DIR):
         persist_directory=persist_directory,
         collection_name="career_coach_rag",
     )
+
     return vectorstore
 
 
