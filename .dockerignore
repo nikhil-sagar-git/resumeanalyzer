@@ -1,7 +1,8 @@
 .git
 .github
+.env
 __pycache__
 *.pyc
 .venv
 venv
-.env
+career_coach_chroma_db
